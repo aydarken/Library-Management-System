@@ -1,5 +1,6 @@
 package kz.lab9.controllers;
 
+import io.swagger.annotations.Api;
 import kz.lab9.models.Book;
 import kz.lab9.repositories.BookRepository;
 import kz.lab9.models.Student;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/courses")
+@Api(value = "Course Controller class", description = "This class allows to interact with Course object")
 public class CourseController {
 
     @Autowired
@@ -56,5 +58,10 @@ public class CourseController {
 
         course.setBook(book);
         return courseRepository.save(course);
+    }
+
+    @DeleteMapping
+    public void deleteCourse(@RequestBody Long id){
+        courseRepository.deleteById(id);
     }
 }

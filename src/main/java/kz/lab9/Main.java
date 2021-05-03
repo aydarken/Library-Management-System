@@ -34,7 +34,7 @@ public class Main {
         student.setCourses(new HashSet<>());
 
         book.setId(1L);
-        book.setName("testBook");
+        book.setTitle("testBook");
         book.setCourse(student.getCourses());
 
         bookController.createBook(book);
