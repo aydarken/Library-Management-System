@@ -28,7 +28,6 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    // add user
     @GetMapping("/create")
     public void createUserByUsernamePassword(String username,
                                              String password) {

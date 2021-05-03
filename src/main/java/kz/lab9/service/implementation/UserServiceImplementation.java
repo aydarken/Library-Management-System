@@ -38,7 +38,7 @@ public class UserServiceImplementation implements UserService, UserDetailsServic
 
         if (userDb != null) {
             userDb.setUsername(user.getUsername());
-            userDb.setPassword(user.getPassword()); // plaintext password
+            userDb.setPassword(user.getPassword());
 
             userRepository.saveAndFlush(userDb);
         }
